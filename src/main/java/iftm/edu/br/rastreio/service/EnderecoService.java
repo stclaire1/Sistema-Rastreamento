@@ -25,4 +25,8 @@ public class EnderecoService {
         return lista;
     }
 
+    public Endereco findById(Long id) {
+        return repo.findById(id).get();
+    }
+
 }

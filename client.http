@@ -30,6 +30,7 @@ Content-Type: application/json
     
     {
         "destinatario": "João",
+        "idPacote": "12345",
         "endereco": {
             "id": 1
         },
