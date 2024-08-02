@@ -29,8 +29,8 @@ public class PacoteController {
     private PacoteService pacoteService;
 
     @PostMapping
-    public void salvarPacote(@RequestBody Pacote pacote) {
-        pacoteService.salvarPacote(pacote);
+    public Pacote salvarPacote(@RequestBody Pacote pacote) {
+        return pacoteService.salvarPacote(pacote);
     }
 
     @GetMapping

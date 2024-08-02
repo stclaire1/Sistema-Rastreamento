@@ -31,7 +31,6 @@ public class PacoteService {
 
     public void atualizarPacote(Long id, Pacote pacote) {
         Pacote pacoteExistente = repo.findById(id).get();
-        pacoteExistente.setId(pacote.getId());
         pacoteExistente.setDestinatario(pacote.getDestinatario());
         pacoteExistente.setCodigoRastreio(pacote.getCodigoRastreio());
         pacoteExistente.setEndereco(pacote.getEndereco());

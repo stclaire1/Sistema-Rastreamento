@@ -15,12 +15,10 @@ import iftm.edu.br.rastreio.service.RastreamentoService;
 @RequestMapping("/rastreamentos")
 public class RastreamentoController {
 
-    @Autowired RastreamentoService rastreamentoservice;
+    // - GET /rastreamentos/{id} - Consulta todos os rastreamentos de um pacote específico.
 
-    @PostMapping
-    public Rastreamento salvarRastreamento(@RequestBody Rastreamento rastreamento) {
-        return rastreamentoservice.salvarRastreamento(rastreamento);
-    }
+    @Autowired
+    RastreamentoService rastreamentoservice;
 
     @GetMapping("/{id}")
     public Rastreamento buscarRastreamento(@PathVariable Long id) {

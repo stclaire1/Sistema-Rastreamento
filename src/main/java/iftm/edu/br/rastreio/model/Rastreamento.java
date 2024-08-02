@@ -28,10 +28,6 @@ public class Rastreamento {
     private String status;
     private String localizacao;
 
-    @ManyToOne
-    @JoinColumn(name = "pacote_id")
-    private Pacote pacote;
-
     public String getResumo() {
         return "Data e hora: " + dataHora + "\n" + "Status: " + status + "\n" + "Localização: " + localizacao;
     }

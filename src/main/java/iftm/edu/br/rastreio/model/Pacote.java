@@ -31,12 +31,12 @@ public class Pacote {
     private String destinatario;
     private Long codigoRastreio;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Endereco endereco;
 
     private String status;
 
-    @OneToMany(mappedBy = "pacote", cascade = CascadeType.ALL)
+    @OneToMany
     private List<Rastreamento> rastreamentos = new ArrayList<Rastreamento>();
 
     public void atualizarStatus(Date dataHora, String novoStatus, String localizacao) {
@@ -45,7 +45,6 @@ public class Pacote {
         rastreamento.setDataHora(dataHora);
         rastreamento.setStatus(novoStatus);
         rastreamento.setLocalizacao(localizacao);
-        rastreamento.setPacote(this);
     }
 
     public String consultarInformacoes() {
