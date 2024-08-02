@@ -26,12 +26,11 @@ import lombok.ToString;
 public class Pacote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPacote;
-    private String id;
+    private Long id;
+    private String idPacote;
     private String destinatario;
-    private Long codigoRastreio;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Endereco endereco;
 
     private String status;
@@ -48,8 +47,7 @@ public class Pacote {
     }
 
     public String consultarInformacoes() {
-        return "Pacote: " + id + "\n" + "Destinatário: " + destinatario + "\n" + "Código de rastreio: " + codigoRastreio
-                + "\n" + "Endereço: " + endereco.getEnderecoCompleto() + "\n" + "Status: " + status + "\n"
+        return "Pacote: " + id + "\n" + "Destinatário: " + destinatario + "\n" + "\n" + "Endereço: " + endereco.getEnderecoCompleto() + "\n" + "Status: " + status + "\n"
                 + "Histórico de rastreamento: " + rastreamentos;
     }
 }

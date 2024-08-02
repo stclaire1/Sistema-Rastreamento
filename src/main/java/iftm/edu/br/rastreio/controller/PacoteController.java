@@ -16,7 +16,7 @@ import iftm.edu.br.rastreio.model.Pacote;
 import iftm.edu.br.rastreio.service.PacoteService;
 
 @RestController
-@RequestMapping("/pacote")
+@RequestMapping("/pacotes")
 public class PacoteController {
 
     // - POST /pacotes - Adiciona um novo pacote.
@@ -44,8 +44,8 @@ public class PacoteController {
     }
 
     @PutMapping("/{id}")
-    public void atualizarPacote(@PathVariable Long id, @RequestBody Pacote pacote) {
-        pacoteService.atualizarPacote(id, pacote);
+    public Pacote atualizarPacote(@PathVariable Long id, @RequestBody Pacote pacote) {
+        return pacoteService.atualizarPacote(id, pacote);
     }
 
     @DeleteMapping("/{id}")

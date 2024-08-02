@@ -29,12 +29,11 @@ public class PacoteService {
         return repo.findById(id).get();
     }
 
-    public void atualizarPacote(Long id, Pacote pacote) {
+    public Pacote atualizarPacote(Long id, Pacote pacote) {
         Pacote pacoteExistente = repo.findById(id).get();
         pacoteExistente.setDestinatario(pacote.getDestinatario());
-        pacoteExistente.setCodigoRastreio(pacote.getCodigoRastreio());
         pacoteExistente.setEndereco(pacote.getEndereco());
-        repo.save(pacoteExistente);
+        return repo.save(pacoteExistente);
     }
 
     public void deletarPacote(Long id) {
