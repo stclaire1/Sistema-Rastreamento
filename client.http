@@ -1,0 +1,73 @@
+# Requisições HTTP
+
+# Endereço
+
+### Salvar um endereço
+POST /enderecos HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "rua": "Rua dos Bobos",
+    "numero": "0",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "00000-000"
+}
+
+### Listar Endereços
+GET /enderecos HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+# Pacote
+
+### Salvar um pacote
+POST /pacotes HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+    
+    {
+        "destinatario": "João",
+        "endereco": {
+            "id": 1
+        },
+        "status": "Pendente"
+    }
+
+### Listar Pacotes
+GET /pacotes HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Buscar pacote especifico 
+GET /pacotes/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Atualizar pacote
+PUT /pacotes/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+  "destinatario": "João da Silva",
+  "endereco": {
+    "id": 1
+  },
+  "status": "Em trânsito"
+}
+
+### Deletar pacote
+DELETE /pacotes/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+# Rastreamento
+
+### Buscar rastreamento
+GET /rastreamentos/1 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
