@@ -25,6 +25,6 @@ public class Endereco {
     private String cep;
 
     public String getEnderecoCompleto() {
-        return rua + ", " + numero + ", " + cidade + ", " + estado + ", " + cep;
+        return rua + ", " + numero + " - " + cidade + ", " + estado + " / " + cep;
     }
 }

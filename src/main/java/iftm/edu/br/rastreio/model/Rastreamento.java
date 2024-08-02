@@ -18,7 +18,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString(exclude = {"pacote"})
-@EqualsAndHashCode(of = {"id", "dataHora", "status", "localizacao"})
+@EqualsAndHashCode(of = {"id"})
 @Entity
 public class Rastreamento {
     @Id
